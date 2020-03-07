@@ -27,6 +27,12 @@ export default new Router({
                 }
             ]
         },
+
+        {
+            path: '/scroll',
+            name: 'scroll',
+            component: () => import('./pages/scroll.vue')
+        },
         {
             path: '/login',
             name: 'login',

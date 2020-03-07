@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLazyLoad from 'vue-lazyload'
 
 axios.defaults.baseURL = "/api";
 axios.defaults.timeout = 8000;
@@ -19,6 +20,9 @@ axios.interceptors.response.use(function (response) {
 })
 
 Vue.use(axios, VueAxios)
+Vue.use(VueLazyLoad, {
+  loading: require('./assets/imgs/loading-svg/loading-bars.svg')
+})
 Vue.config.productionTip = false
 
 new Vue({
